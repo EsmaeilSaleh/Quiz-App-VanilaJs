@@ -92,6 +92,7 @@ function getSelected() {
   return answer;
 }
 
+let p = document.createElement("p");
 submitBtn.addEventListener("click", () => {
   let answer = getSelected();
   if (answer) {
@@ -101,17 +102,18 @@ submitBtn.addEventListener("click", () => {
     }
   }
   currentQuiz++;
+  p.innerText = "";
   if (currentQuiz < quizData.length && answer !== undefined) {
     loadQuiz();
   } else if (answer === undefined) {
-    console.log("Please select an answer!");
+    p.innerText = "Please Select an answer!";
+    submitBtn.appendChild(p);
   } else {
     quiz.innerHTML = `<h2 style="padding: 3em">You have finished the quiz with the result of: ${score}/${quizData.length}</h2>
 <button onclick="location.reload()">Reload</button>
 `;
   }
 });
-
 
 function deselectAnswers() {
   answersEl.forEach((el) => (el.checked = false));

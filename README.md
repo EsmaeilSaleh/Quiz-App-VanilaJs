@@ -1,3 +1,3 @@
-# Quiz-App-VanilaJs
+# Quiz-App-VanillaJs
 
-A Quiz App using VanilaJs
+A Quiz App using VanillaJs
